@@ -1,6 +1,9 @@
 import React from 'react'
 import { useQuery } from "react-query";
 import Axios from "axios";
+import Navbar from '../navbarComponenet/Navbar';
+import Avatar from '../avatarComponent/Avatar';
+import Button from '../buttonComponent/Button';
 
 const Card = () => {
   const products = 'https://dummyjson.com/products?limit=0&skip=0'
@@ -17,7 +20,7 @@ const Card = () => {
         <Avatar />
         <Button />
         <div className='container4'>
-      
+
       </div>
     </>
   
