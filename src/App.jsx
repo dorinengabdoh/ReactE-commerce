@@ -1,29 +1,31 @@
 
-import { useState } from 'react'
+import { BrowserRouter as Router, Routes,Route } from 'react-router-dom'
+import Nav from './Components/Nav/Nav'
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import './App.css'
-import Card from './Component/cardComponent/Card'
-import Details from './Component/detailsComponent/Details'
-import { QueryClient, QueryClientProvider } from 'react-query' 
-import { RouterProvider, createBrowserRouter } from 'react-router-dom'
-
+import Card from './Component/cardComponent/Card';
+import Details from './Component/details component/Details';
+import Contact from './Component/contactComponent/Contact';
 
 
 function App() {
   const client = new QueryClient();
- 
   return (
     <>
     <QueryClientProvider client={client}>
-      <RouterProvider router={router} />
-    <BrowserRouter>
-    <Routes>
-        <Route path='/' element={<Card />}/>
-        <Route path='/details' element={<Details />}/>
-    </Routes>
-    </BrowserRouter>
+  
+    <Router>
+     <Nav />
+      <Routes>
+        <Route path="/Contact" element={<Contact />}/>
+        <Route path="/Details" element={<Details />}/>
+        <Route path="/" element={< Card/>}/>
+      </Routes>
+    </Router>
+
+    <Home />
     </QueryClientProvider>
     </>
   )
 }
-
 export default App

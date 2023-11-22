@@ -1,4 +1,3 @@
-import React from 'react'
 import { useQuery } from "react-query";
 import Axios from "axios";
 import Navbar from '../navbarComponenet/Navbar';
